@@ -6,9 +6,6 @@ using TMPro;
 
 public class CitadelManagement : MonoBehaviour
 {
-    //main hub zone area
-    public GameObject alloftheZones;
-
     //lounge zone
     public GameObject subZone_lounge;
     public GameObject chara_allie;
@@ -56,11 +53,11 @@ public class CitadelManagement : MonoBehaviour
     //UI subHeader
     public GameObject panel_subHeader;
 
+    //managing zone handling
+
     // Start is called before the first frame update
     void Start()
     {
-        alloftheZones.gameObject.SetActive(true);
-
         panel_subHeader.gameObject.SetActive(false);
 
         subZone_lounge.gameObject.SetActive(false);
@@ -80,62 +77,52 @@ public class CitadelManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OpeningTheZones();
         NavigateZones();
     }
 
     #region Opening Zones
 
-    public void OpeningTheZones()
+    public void EnteringTheAlley()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            RaycastHit2D rayHit2 = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+        subZone_alley.gameObject.SetActive(true);
+        panel_subHeader.gameObject.SetActive(true);
+    }
 
-            if (rayHit2.collider.name == "entrance_lounge")
-            {
-                alloftheZones.gameObject.SetActive(false);
+    public void EnteringTheLounge()
+    {
+        subZone_lounge.gameObject.SetActive(true);
+        panel_subHeader.gameObject.SetActive(true);
+    }
 
-                subZone_lounge.gameObject.SetActive(true);
-                panel_subHeader.gameObject.SetActive(true);
-            }
-            if (rayHit2.collider.name == "entrance_alley")
-            {
-                alloftheZones.gameObject.SetActive(false);
+    public void EnteringTheOffices()
+    {
+        subZone_office.gameObject.SetActive(true);
+        panel_subHeader.gameObject.SetActive(true);
+    }
 
-                subZone_alley.gameObject.SetActive(true);
-                panel_subHeader.gameObject.SetActive(true);
-            }
-            if (rayHit2.collider.name == "entrance_office")
-            {
-                alloftheZones.gameObject.SetActive(false);
-
-                subZone_office.gameObject.SetActive(true);
-                panel_subHeader.gameObject.SetActive(true);
-            }
-            if (rayHit2.collider.name == "entrance_digs")
-            {
-                alloftheZones.gameObject.SetActive(false);
-
-                subZone_digs.gameObject.SetActive(true);
-                panel_subHeader.gameObject.SetActive(true);
-            }
-        }
+    public void EnteringTheDigs()
+    {
+        subZone_digs.gameObject.SetActive(true);
+        panel_subHeader.gameObject.SetActive(true);
     }
     #endregion
 
-    #region Navigating Zones
+    #region Navigating Zones    
 
     public void NavigateZones()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D rayHit2 = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+            RaycastHit2D rayHit2b = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+
+            Debug.Log(rayHit2b);
 
             //lounge
             #region The Lounge
-            if (rayHit2.collider.name == "chara_allie")
+            if (rayHit2b.collider.name == "chara_allie")
             {
+                Debug.Log("I hit " + rayHit2b.collider.name);
+
                 chara_oneesan.gameObject.SetActive(false);
                 chara_kil.gameObject.SetActive(false);
 
@@ -144,7 +131,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_allie.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_oneesan")
+            if (rayHit2b.collider.name == "chara_oneesan")
             {
                 chara_allie.gameObject.SetActive(false);
                 chara_kil.gameObject.SetActive(false);
@@ -154,7 +141,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_oneesan.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_kil")
+            if (rayHit2b.collider.name == "chara_kil")
             {
                 chara_allie.gameObject.SetActive(false);
                 chara_oneesan.gameObject.SetActive(false);
@@ -168,7 +155,7 @@ public class CitadelManagement : MonoBehaviour
 
             //alley
             #region The Alley
-            if (rayHit2.collider.name == "chara_crank")
+            if (rayHit2b.collider.name == "chara_crank")
             {
                 chara_lane.gameObject.SetActive(false);
                 chara_draz.gameObject.SetActive(false);
@@ -178,7 +165,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_crank.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_lane")
+            if (rayHit2b.collider.name == "chara_lane")
             {
                 chara_crank.gameObject.SetActive(false);
                 chara_draz.gameObject.SetActive(false);
@@ -188,7 +175,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_lane.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_draz")
+            if (rayHit2b.collider.name == "chara_draz")
             {
                 chara_crank.gameObject.SetActive(false);
                 chara_lane.gameObject.SetActive(false);
@@ -196,13 +183,13 @@ public class CitadelManagement : MonoBehaviour
                 chara_draz.gameObject.transform.position = newCharaPositon;
                 chara_draz.transform.localScale = newSize;
 
-                panel_draz.gameObject.SetActive(true);          
+                panel_draz.gameObject.SetActive(true);
             }
             #endregion
 
             //office
             #region The Office
-            if (rayHit2.collider.name == "chara_berro")
+            if (rayHit2b.collider.name == "chara_berro")
             {
                 chara_xel.gameObject.SetActive(false);
 
@@ -211,7 +198,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_berro.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_xel")
+            if (rayHit2b.collider.name == "chara_xel")
             {
                 chara_berro.gameObject.SetActive(false);
 
@@ -224,7 +211,7 @@ public class CitadelManagement : MonoBehaviour
 
             //digs
             #region The Digs
-            if (rayHit2.collider.name == "chara_loanshark")
+            if (rayHit2b.collider.name == "chara_loanshark")
             {
                 chara_questchara1.gameObject.SetActive(false);
                 chara_questchara2.gameObject.SetActive(false);
@@ -234,7 +221,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_loanshark.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_questchara1")
+            if (rayHit2b.collider.name == "chara_questchara1")
             {
                 chara_loanshark.gameObject.SetActive(false);
                 chara_questchara2.gameObject.SetActive(false);
@@ -244,7 +231,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_questchara1.gameObject.SetActive(true);
             }
-            if (rayHit2.collider.name == "chara_questchara2")
+            if (rayHit2b.collider.name == "chara_questchara2")
             {
                 chara_loanshark.gameObject.SetActive(false);
                 chara_questchara1.gameObject.SetActive(false);
