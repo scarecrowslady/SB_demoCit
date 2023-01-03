@@ -75,15 +75,6 @@ public class CitadelManagement : MonoBehaviour
 
         originalSize = new Vector3(2, 6, 1); 
         newSize = new Vector3(3, 6, 1);
-
-        #region setting norms (defunct)
-        //chara_loanshark.transform.position = originalPosition1;
-        //chara_loanshark.transform.localScale = originalSize;
-        //chara_questchara1.transform.position = originalPosition2;
-        //chara_questchara1.transform.localScale = originalSize;
-        //chara_questchara2.transform.position = originalPosition3;
-        //chara_questchara2.transform.localScale = originalSize;
-        #endregion
     }
 
     // Update is called once per frame

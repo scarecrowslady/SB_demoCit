@@ -1187,9 +1187,10 @@ GameObject:
   - component: {fileID: 343545945}
   - component: {fileID: 343545947}
   - component: {fileID: 343545946}
+  - component: {fileID: 343545948}
   m_Layer: 0
   m_Name: entrance_alley
-  m_TagString: Untagged
+  m_TagString: zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1203,7 +1204,7 @@ RectTransform:
   m_GameObject: {fileID: 343545944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.24}
-  m_LocalScale: {x: 2.918125, y: 5.6569533, z: 1}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158421261}
@@ -1292,6 +1293,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &343545948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343545944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357814434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,9 +1829,10 @@ GameObject:
   - component: {fileID: 494128111}
   - component: {fileID: 494128112}
   - component: {fileID: 494128113}
+  - component: {fileID: 494128114}
   m_Layer: 0
   m_Name: chara_questchara1
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1916,6 +1930,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &494128114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494128110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,9 +2187,10 @@ GameObject:
   - component: {fileID: 555430741}
   - component: {fileID: 555430742}
   - component: {fileID: 555430743}
+  - component: {fileID: 555430744}
   m_Layer: 0
   m_Name: chara_questchara2
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2261,6 +2288,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &555430744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555430740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &570107273
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,9 +2311,10 @@ GameObject:
   - component: {fileID: 570107274}
   - component: {fileID: 570107275}
   - component: {fileID: 570107276}
+  - component: {fileID: 570107277}
   m_Layer: 0
   m_Name: chara_lane
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2372,6 +2412,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &570107277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570107273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &579620770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,9 +2961,10 @@ GameObject:
   - component: {fileID: 624247572}
   - component: {fileID: 624247573}
   - component: {fileID: 624247574}
+  - component: {fileID: 624247575}
   m_Layer: 0
   m_Name: chara_xel
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3009,6 +3062,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &624247575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624247571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &626630583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,9 +3394,10 @@ GameObject:
   - component: {fileID: 672069108}
   - component: {fileID: 672069109}
   - component: {fileID: 672069110}
+  - component: {fileID: 672069111}
   m_Layer: 0
   m_Name: chara_draz
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3429,6 +3495,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &672069111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672069107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &835821745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,9 +3518,10 @@ GameObject:
   - component: {fileID: 835821746}
   - component: {fileID: 835821747}
   - component: {fileID: 835821748}
+  - component: {fileID: 835821749}
   m_Layer: 0
   m_Name: chara_oneesan
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3540,6 +3619,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &835821749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835821745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907459599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,9 +3990,10 @@ GameObject:
   - component: {fileID: 967205196}
   - component: {fileID: 967205197}
   - component: {fileID: 967205198}
+  - component: {fileID: 967205199}
   m_Layer: 0
   m_Name: chara_loanshark
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3999,6 +4091,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &967205199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967205195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1018855589
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,9 +4190,10 @@ GameObject:
   - component: {fileID: 1047744580}
   - component: {fileID: 1047744581}
   - component: {fileID: 1047744582}
+  - component: {fileID: 1047744583}
   m_Layer: 0
   m_Name: chara_allie
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4186,6 +4291,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1047744583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047744579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1051021301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,9 +4841,10 @@ GameObject:
   - component: {fileID: 1162795290}
   - component: {fileID: 1162795291}
   - component: {fileID: 1162795292}
+  - component: {fileID: 1162795293}
   m_Layer: 0
   m_Name: chara_crank
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4824,6 +4942,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1162795293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162795289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1189207328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,9 +5147,10 @@ GameObject:
   - component: {fileID: 1241383787}
   - component: {fileID: 1241383788}
   - component: {fileID: 1241383789}
+  - component: {fileID: 1241383790}
   m_Layer: 0
   m_Name: chara_kil
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5117,6 +5248,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1241383790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241383786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1278347289
 GameObject:
   m_ObjectHideFlags: 0
@@ -6230,9 +6373,10 @@ GameObject:
   - component: {fileID: 1454419885}
   - component: {fileID: 1454419887}
   - component: {fileID: 1454419886}
+  - component: {fileID: 1454419888}
   m_Layer: 0
   m_Name: entrance_office
-  m_TagString: Untagged
+  m_TagString: zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6246,7 +6390,7 @@ RectTransform:
   m_GameObject: {fileID: 1454419884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.24}
-  m_LocalScale: {x: 2.918125, y: 5.6569533, z: 1}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158421261}
@@ -6335,6 +6479,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1454419888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454419884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456516803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,9 +7061,10 @@ GameObject:
   - component: {fileID: 1511737520}
   - component: {fileID: 1511737522}
   - component: {fileID: 1511737521}
+  - component: {fileID: 1511737523}
   m_Layer: 0
   m_Name: entrance_lounge
-  m_TagString: Untagged
+  m_TagString: zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6921,7 +7078,7 @@ RectTransform:
   m_GameObject: {fileID: 1511737519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.24}
-  m_LocalScale: {x: 2.918125, y: 5.6569533, z: 1}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158421261}
@@ -7010,6 +7167,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1511737523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511737519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1525528678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7175,9 +7344,10 @@ GameObject:
   - component: {fileID: 1623716624}
   - component: {fileID: 1623716626}
   - component: {fileID: 1623716625}
+  - component: {fileID: 1623716627}
   m_Layer: 0
   m_Name: entrance_digs
-  m_TagString: Untagged
+  m_TagString: zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7191,7 +7361,7 @@ RectTransform:
   m_GameObject: {fileID: 1623716623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.24}
-  m_LocalScale: {x: 2.918125, y: 5.6569533, z: 1}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158421261}
@@ -7280,6 +7450,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1623716627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623716623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1635002002
 GameObject:
   m_ObjectHideFlags: 0
@@ -8527,9 +8709,10 @@ GameObject:
   - component: {fileID: 2051771180}
   - component: {fileID: 2051771181}
   - component: {fileID: 2051771182}
+  - component: {fileID: 2051771183}
   m_Layer: 0
   m_Name: chara_berro
-  m_TagString: Untagged
+  m_TagString: chara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8627,6 +8810,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2051771183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051771179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6701e1f3ca604bac7999119de7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2089958563
 GameObject:
   m_ObjectHideFlags: 0

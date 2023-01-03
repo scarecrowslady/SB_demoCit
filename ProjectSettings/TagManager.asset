@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - zone_Lounge
-  - zone_Alley
-  - zone_Office
-  - zone_Digs
+  - chara
+  - zone
   layers:
   - Default
   - TransparentFX
