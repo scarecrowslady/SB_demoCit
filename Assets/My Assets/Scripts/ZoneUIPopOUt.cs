@@ -11,7 +11,7 @@ public class ZoneUIPopOUt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        originalSize = new Vector3(2, 6, 1);
+        originalSize = gameObject.transform.localScale;
         zoneEntrance_originalSize = new Vector3(3, 6, 1);
     }
 
@@ -21,7 +21,7 @@ public class ZoneUIPopOUt : MonoBehaviour
 
         if (gameObject.CompareTag("chara") == true)
         {
-            rayHit2.transform.localScale = new Vector3(3, 8, 1);
+            rayHit2.transform.localScale = new Vector3(1, 1, 0);
         }
 
         if (gameObject.CompareTag("zone") == true)

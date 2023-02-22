@@ -6,6 +6,18 @@ TagManager:
   tags:
   - chara
   - zone
+  - bullet
+  - res_rocks
+  - res_debris
+  - res_ammo
+  - res_alien
+  - aggAlien
+  - alienBullet
+  - playerKiller2
+  - neut_alien
+  - playerKiller
+  - bounty_alien
+  - nothing
   layers:
   - Default
   - TransparentFX

@@ -45,9 +45,20 @@ public class CitadelManagement : MonoBehaviour
     private Vector3 originalPosition2;
     private Vector3 originalPosition3;
     private Vector3 newCharaPositon;
-    private Vector3 originalSize;
     private Vector3 newSize;
 
+    //original sizes
+    private Vector3 allieOriginalSize;
+    private Vector3 oneesanOriginalSize;
+    private Vector3 kilOriginalSize;
+    private Vector3 berroOriginalSize;
+    private Vector3 xelOriginalSize;
+    private Vector3 crankOriginalSize;
+    private Vector3 laneOriginalSize;
+    private Vector3 drazOriginalSize;
+    private Vector3 shylarOriginalSize;
+    private Vector3 questchara1OS;
+    private Vector3 questchara2OS;
     //UI header
 
     //UI subHeader
@@ -70,8 +81,21 @@ public class CitadelManagement : MonoBehaviour
         originalPosition3 = new Vector3(1,-2,-1);
         newCharaPositon = new Vector3(-3, -2, -1);
 
-        originalSize = new Vector3(2, 6, 1); 
-        newSize = new Vector3(3, 6, 1);
+        //original sizes
+        allieOriginalSize = chara_allie.transform.localScale;
+        oneesanOriginalSize = chara_oneesan.transform.localScale;
+        kilOriginalSize = chara_kil.transform.localScale;
+        berroOriginalSize = chara_berro.transform.localScale;
+        xelOriginalSize = chara_xel.transform.localScale;
+        crankOriginalSize = chara_crank.transform.localScale;
+        laneOriginalSize = chara_lane.transform.localScale;
+        drazOriginalSize = chara_draz.transform.localScale;
+        shylarOriginalSize = chara_loanshark.transform.localScale;
+        questchara1OS = chara_questchara1.transform.localScale;
+        questchara2OS = chara_questchara2.transform.localScale;
+
+        //newSize = new Vector3(3, 6, 1);
+        newSize = new Vector3(1, 1, 1);
     }
 
     // Update is called once per frame
@@ -119,7 +143,7 @@ public class CitadelManagement : MonoBehaviour
 
             //lounge
             #region The Lounge
-            if (rayHit2b.collider.name == "chara_allie")
+            if (rayHit2b.collider.name == "lounge_Allie")
             {
                 Debug.Log("I hit " + rayHit2b.collider.name);
 
@@ -131,7 +155,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_allie.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_oneesan")
+            if (rayHit2b.collider.name == "lounge_Oneesan")
             {
                 chara_allie.gameObject.SetActive(false);
                 chara_kil.gameObject.SetActive(false);
@@ -141,7 +165,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_oneesan.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_kil")
+            if (rayHit2b.collider.name == "lounge_Kil")
             {
                 chara_allie.gameObject.SetActive(false);
                 chara_oneesan.gameObject.SetActive(false);
@@ -155,7 +179,7 @@ public class CitadelManagement : MonoBehaviour
 
             //alley
             #region The Alley
-            if (rayHit2b.collider.name == "chara_crank")
+            if (rayHit2b.collider.name == "alley_Crank")
             {
                 chara_lane.gameObject.SetActive(false);
                 chara_draz.gameObject.SetActive(false);
@@ -165,7 +189,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_crank.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_lane")
+            if (rayHit2b.collider.name == "alley_Lane")
             {
                 chara_crank.gameObject.SetActive(false);
                 chara_draz.gameObject.SetActive(false);
@@ -175,7 +199,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_lane.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_draz")
+            if (rayHit2b.collider.name == "alley_Draz")
             {
                 chara_crank.gameObject.SetActive(false);
                 chara_lane.gameObject.SetActive(false);
@@ -189,7 +213,7 @@ public class CitadelManagement : MonoBehaviour
 
             //office
             #region The Office
-            if (rayHit2b.collider.name == "chara_berro")
+            if (rayHit2b.collider.name == "office_Berro")
             {
                 chara_xel.gameObject.SetActive(false);
 
@@ -198,7 +222,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_berro.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_xel")
+            if (rayHit2b.collider.name == "office_Xel")
             {
                 chara_berro.gameObject.SetActive(false);
 
@@ -211,7 +235,7 @@ public class CitadelManagement : MonoBehaviour
 
             //digs
             #region The Digs
-            if (rayHit2b.collider.name == "chara_loanshark")
+            if (rayHit2b.collider.name == "digs_Shylar")
             {
                 chara_questchara1.gameObject.SetActive(false);
                 chara_questchara2.gameObject.SetActive(false);
@@ -221,7 +245,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_loanshark.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_questchara1")
+            if (rayHit2b.collider.name == "digs_mainChara1")
             {
                 chara_loanshark.gameObject.SetActive(false);
                 chara_questchara2.gameObject.SetActive(false);
@@ -231,7 +255,7 @@ public class CitadelManagement : MonoBehaviour
 
                 panel_questchara1.gameObject.SetActive(true);
             }
-            if (rayHit2b.collider.name == "chara_questchara2")
+            if (rayHit2b.collider.name == "digs_mainChara2")
             {
                 chara_loanshark.gameObject.SetActive(false);
                 chara_questchara1.gameObject.SetActive(false);
@@ -250,60 +274,60 @@ public class CitadelManagement : MonoBehaviour
         //lounge
         chara_allie.gameObject.SetActive(true);
         chara_allie.transform.position = originalPosition1;
-        chara_allie.transform.localScale = originalSize;
+        chara_allie.transform.localScale = allieOriginalSize;
         panel_allie.gameObject.SetActive(false);
 
         chara_oneesan.gameObject.SetActive(true);
         chara_oneesan.transform.position = originalPosition2;
-        chara_oneesan.transform.localScale = originalSize;
+        chara_oneesan.transform.localScale = oneesanOriginalSize;
         panel_oneesan.gameObject.SetActive(false);
 
         chara_kil.gameObject.SetActive(true);
         chara_kil.transform.position = originalPosition3;
-        chara_kil.transform.localScale = originalSize;
+        chara_kil.transform.localScale = kilOriginalSize;
         panel_kil.gameObject.SetActive(false);
 
         //alley
         chara_crank.gameObject.SetActive(true);
         chara_crank.transform.position = originalPosition1;
-        chara_crank.transform.localScale = originalSize;
+        chara_crank.transform.localScale = crankOriginalSize;
         panel_crank.gameObject.SetActive(false);
 
         chara_lane.gameObject.SetActive(true);
         chara_lane.transform.position = originalPosition2;
-        chara_lane.transform.localScale = originalSize;
+        chara_lane.transform.localScale = laneOriginalSize;
         panel_lane.gameObject.SetActive(false);
 
         chara_draz.gameObject.SetActive(true);
         chara_draz.transform.position = originalPosition3;
-        chara_draz.transform.localScale = originalSize;
+        chara_draz.transform.localScale = drazOriginalSize;
         panel_draz.gameObject.SetActive(false);
 
         //office
         chara_berro.gameObject.SetActive(true);
         chara_berro.transform.position = originalPosition1;
-        chara_berro.transform.localScale = originalSize;
+        chara_berro.transform.localScale = berroOriginalSize;
         panel_berro.gameObject.SetActive(false);
 
         chara_xel.gameObject.SetActive(true);
         chara_xel.transform.position = originalPosition2;
-        chara_xel.transform.localScale = originalSize;
+        chara_xel.transform.localScale = xelOriginalSize;
         panel_xel.gameObject.SetActive(false);
 
         //digs
         chara_loanshark.gameObject.SetActive(true);
         chara_loanshark.transform.position = originalPosition1;
-        chara_loanshark.transform.localScale = originalSize;
+        chara_loanshark.transform.localScale = shylarOriginalSize;
         panel_loanshark.gameObject.SetActive(false);
 
         chara_questchara1.gameObject.SetActive(true);
         chara_questchara1.transform.position = originalPosition2;
-        chara_questchara1.transform.localScale = originalSize;
+        chara_questchara1.transform.localScale = questchara1OS;
         panel_questchara1.gameObject.SetActive(false);
 
         chara_questchara2.gameObject.SetActive(true);
         chara_questchara2.transform.position = originalPosition3;
-        chara_questchara2.transform.localScale = originalSize;
+        chara_questchara2.transform.localScale = questchara2OS;
         panel_questchara2.gameObject.SetActive(false);
     }
     #endregion
