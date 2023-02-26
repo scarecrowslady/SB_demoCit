@@ -318,7 +318,7 @@ public class CitadelInventoryManagement : MonoBehaviour
         pheninSecretsOwned = MainManager.Instance.pheninSecretsAmt;
         xeronSecretsowned = MainManager.Instance.xeronSecretsAmt;
         pheninRlshpAmt = MainManager.Instance.pheninRlshpScore;
-        pheninMaxRlshpAmt = MainManager.Instance.pheninRlshpMaxScore;
+        pheninMaxRlshpAmt = MainManager.Instance.pheninRlshpMaxScore; 
         xeronRlshpAmt = MainManager.Instance.xeronRlshpScore;
         xeronMaxRlshpAmt = MainManager.Instance.xeronRlshpMaxScore;
 
@@ -329,13 +329,17 @@ public class CitadelInventoryManagement : MonoBehaviour
         if(pheninRlshpAmt >= pheninMaxRlshpAmt)
         {
             pheninSecretsOwned += 1;
+            MainManager.Instance.pheninSecretsAmt += 1;
             pheninRlshpAmt = 0;
+            MainManager.Instance.pheninRlshpScore = pheninRlshpAmt;
         }
         if(xeronRlshpAmt >= xeronMaxRlshpAmt)
         {
             xeronSecretsowned += 1;
+            MainManager.Instance.xeronSecretsAmt += 1;
             xeronRlshpAmt = 0;
-        }
+            MainManager.Instance.xeronRlshpScore = xeronRlshpAmt;
+        }        
 
         rocksOwnedAmt = MainManager.Instance.InvRockCount;
         debrisOwnedAmt = MainManager.Instance.InvDebrisCount;

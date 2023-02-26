@@ -33,6 +33,8 @@ public class CitadelController : MonoBehaviour
 
     public CitadelManagement citadelManagement;
 
+    public bool isGameJustEnded;
+
     //ending game triggers
     public float debtAmount;
     public float dueDate;
@@ -41,6 +43,9 @@ public class CitadelController : MonoBehaviour
     private void Start()
     {
         MainManager.Instance.isLevelEnded = false;
+
+        isGameJustEnded = false;
+        MainManager.Instance.IsGameJustEnded = isGameJustEnded;
 
         MainManager.Instance.SaveInfo();
 
@@ -57,7 +62,7 @@ public class CitadelController : MonoBehaviour
 
     public void Update()
     {
-        if(dueDate >= currentDate && debtAmount >= 1)
+        if(dueDate <= currentDate && debtAmount >= 1)
         {
             MainManager.Instance.lastPlayerName = MainManager.Instance.PlayerName;
             MainManager.Instance.lastPlayerScore = MainManager.Instance.PlayerHiScore;
@@ -67,7 +72,7 @@ public class CitadelController : MonoBehaviour
                 MainManager.Instance.bestPlayerScore = MainManager.Instance.PlayerHiScore;
                 MainManager.Instance.bestPlayerName = MainManager.Instance.PlayerName;
             }
-
+            
             MainManager.Instance.SaveInfo();
 
             GameOverScreen();
@@ -76,6 +81,9 @@ public class CitadelController : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        isGameJustEnded = false;
+        MainManager.Instance.IsGameJustEnded = isGameJustEnded;
+
         MainManager.Instance.SaveInfo();
 
         SceneManager.LoadScene("Main");
@@ -94,7 +102,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "The Space Lane";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -111,7 +119,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Terras I";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -128,7 +136,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Korra'ath Zone";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -145,7 +153,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "The Orion Gate";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -162,7 +170,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Rigel";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -179,7 +187,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Allendome Field";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -196,7 +204,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Xeronix Nebula";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -213,7 +221,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Betelgeuse";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -230,7 +238,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "Horaxes Moon";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -247,7 +255,7 @@ public class CitadelController : MonoBehaviour
 
         MainManager.Instance.levelName = "The Fringe";
 
-        MainManager.Instance.currentDayCount += 1;
+        MainManager.Instance.dayCountAmt -= 1;
 
         MainManager.Instance.SaveInfo();
         SceneManager.LoadScene("Game");
@@ -282,6 +290,7 @@ public class CitadelController : MonoBehaviour
         ManageBestLastScores();
 
         SceneManager.LoadScene("Main");
+
         MainManager.Instance.IsGameSaved = false;
         MainManager.Instance.IsGameJustEnded = true;
     }

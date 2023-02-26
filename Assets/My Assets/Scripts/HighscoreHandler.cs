@@ -62,13 +62,13 @@ public class HighscoreHandler : MonoBehaviour
         }
     }
 
-    public void ClearHighscores()
-    {
-        MainManager.Instance.bestPlayerName = "";
-        MainManager.Instance.bestPlayerScore = 0;
-        MainManager.Instance.lastPlayerName = "";
-        MainManager.Instance.lastPlayerScore = 0;
+    //public void ClearHighscores()
+    //{
+    //    MainManager.Instance.bestPlayerName = "";
+    //    MainManager.Instance.bestPlayerScore = 0;
+    //    MainManager.Instance.lastPlayerName = "";
+    //    MainManager.Instance.lastPlayerScore = 0;
 
-        highscoreList.Clear();
-    }
+    //    highscoreList.Clear();
+    //}
 }

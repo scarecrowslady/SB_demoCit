@@ -48,6 +48,9 @@ public class MainMenuManager : MonoBehaviour
     public bool isGameSaved;
     public bool isGameJustEnded;
 
+    //exiting the game
+    public GameObject exitPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +72,12 @@ public class MainMenuManager : MonoBehaviour
         isGameJustEnded = MainManager.Instance.IsGameJustEnded;
     }
 
+    private void Update()
+    {
+        //isGameJustEnded = MainManager.Instance.IsGameJustEnded;
+    }
+
+    #region dealing with load button
     public void DisableLoadButton()
     {
         loadButton.enabled = false;
@@ -77,6 +86,7 @@ public class MainMenuManager : MonoBehaviour
     {
         loadButton.enabled = true;
     }
+    #endregion
 
     #region Inputting New Game Info
     public void SetColor(Color playerColor)
@@ -147,12 +157,13 @@ public class MainMenuManager : MonoBehaviour
     {
         if (isGameJustEnded == true)
         {
+            Debug.Log("game just ended and adding: " + MainManager.Instance.lastPlayerName);
             highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.lastPlayerName, MainManager.Instance.lastPlayerScore));
 
             isGameJustEnded = false;
             MainManager.Instance.IsGameJustEnded = isGameJustEnded;
 
-            MainManager.Instance.SaveInfo();
+            Debug.Log("is game ended? " + isGameJustEnded);
         }
     }
     #endregion
@@ -166,8 +177,10 @@ public class MainMenuManager : MonoBehaviour
             MainManager.Instance.levelName = "The Space Lane";
 
             MainManager.Instance.IsGameSaved = false;
+
             isGameJustEnded = false;
             MainManager.Instance.IsGameJustEnded = isGameJustEnded;
+            Debug.Log("starting a game is the game just ended? " + isGameJustEnded);
 
             if (MainManager.Instance.DifficultyLevel == "easy")
             {
@@ -323,8 +336,18 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void Exit()
+    public void FirstExit()
     {
+        MainManager.Instance.IsGameJustEnded = false;
+        Debug.Log("exiting the game and making the game just ended? " + isGameJustEnded);
+
+        MainManager.Instance.SaveInfo();
+
+        exitPanel.SetActive(true);
+    }
+
+    public void Exit()
+    {    
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else

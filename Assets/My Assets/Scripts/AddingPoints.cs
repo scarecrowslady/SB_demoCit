@@ -146,8 +146,6 @@ public class AddingPoints : MonoBehaviour
             gameManager.GetComponent<GameController>().AddIrillRlshp(addPheninRlshpForShootingAmt);
             gameManager.GetComponent<GameController>().AddMoney(addMoneyAmt);
             gameManager.GetComponent<GameController>().AddingScore(addScoreForAliensAmt);
-
-            Debug.Log("Adding Plunder: " + MainManager.Instance.InvBountyCount);
         }
 
         if (collision.CompareTag("playerKiller") == true)
@@ -165,9 +163,10 @@ public class AddingPoints : MonoBehaviour
             {
                 gameManager.GetComponent<GameController>().BecomeCriminal(hittingResCrimeRateAmt);
             } 
+
             if(playerBackgroundChoice == "trader")
             {
-                gameManager.GetComponent<GameController>().AddDebris(addDebrisAmt * (MainManager.Instance.scavengingRate * 2));
+                gameManager.GetComponent<GameController>().AddDebris(addDebrisAmt * MainManager.Instance.scavengingRate);
                 gameManager.GetComponent<GameController>().AddingScore(addToHighScore/2);
             } else if (playerBackgroundChoice == "pirate" || playerBackgroundChoice == "hunter")
             {
@@ -202,12 +201,12 @@ public class AddingPoints : MonoBehaviour
             }
             if (playerBackgroundChoice == "trader")
             {
-                gameManager.GetComponent<GameController>().AddDebris(addDebrisAmt * (MainManager.Instance.scavengingRate * 2));
+                gameManager.GetComponent<GameController>().AddRocks(addRocksAmt * MainManager.Instance.scavengingRate);
                 gameManager.GetComponent<GameController>().AddingScore(addToHighScore/2);
             }
             else if (playerBackgroundChoice == "pirate" || playerBackgroundChoice == "hunter")
             {
-                gameManager.GetComponent<GameController>().AddDebris(addDebrisAmt * MainManager.Instance.scavengingRate);
+                gameManager.GetComponent<GameController>().AddRocks(addRocksAmt * MainManager.Instance.scavengingRate);
             }
         }
 
@@ -221,7 +220,7 @@ public class AddingPoints : MonoBehaviour
             //hunter perk
             if (playerBackgroundChoice == "hunter")
             {
-                gameManager.GetComponent<GameController>().AddBounty(addBountyAmt * (MainManager.Instance.scavengingRate * 2));
+                gameManager.GetComponent<GameController>().AddBounty(addBountyAmt * MainManager.Instance.scavengingRate);
                 gameManager.GetComponent<GameController>().AddingScore(addToHighScore);
 
             } else if (playerBackgroundChoice == "trader" || playerBackgroundChoice == "pirate")

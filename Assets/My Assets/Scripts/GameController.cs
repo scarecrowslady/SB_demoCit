@@ -130,6 +130,12 @@ public class GameController : MonoBehaviour
     //secrets owned
     public float pheninSecretsOwned;
     public float xeronSecretsOwned;
+
+    //more UI info
+    public TMP_Text pheninMaxScore;
+    public TMP_Text currentPheninScore;
+    public TMP_Text xeronMaxScore;
+    public TMP_Text currentXeronScore;
     #endregion
 
     #region Level Management
@@ -288,10 +294,10 @@ public class GameController : MonoBehaviour
         xeronMaxValue = MainManager.Instance.xeronRlshpMaxScore;
         xenonSlider.minValue = 0;
 
-        pheninFactionValue = MainManager.Instance.pheninRlshpScore;
-        xeronFactionValue = MainManager.Instance.xeronRlshpScore;
-        pheninSlider.value = pheninFactionValue;
-        xenonSlider.value = xeronFactionValue;
+        //pheninFactionValue = MainManager.Instance.pheninRlshpScore;
+        //xeronFactionValue = MainManager.Instance.xeronRlshpScore;
+        //pheninSlider.value = pheninFactionValue;
+        //xenonSlider.value = xeronFactionValue;
 
         //flag stuff
         hasPheninColors = MainManager.Instance.hasPheninColors;
@@ -303,6 +309,12 @@ public class GameController : MonoBehaviour
         //secrets owned
         pheninSecretsOwned = MainManager.Instance.pheninSecretsAmt;
         xeronSecretsOwned = MainManager.Instance.xeronSecretsAmt;
+
+        //initializing text
+        //currentPheninScore.text = pheninSlider.value + "";
+        //currentXeronScore.text = xenonSlider.value + "";
+        //pheninMaxScore.text = MainManager.Instance.pheninRlshpMaxScore + "";
+        //xeronMaxScore.text = MainManager.Instance.xeronRlshpMaxScore + "";
 
         Debug.Log("Game Controller checking whether phenin colors are one " + MainManager.Instance.hasturnedonPheninColors);
         #endregion
@@ -337,6 +349,17 @@ public class GameController : MonoBehaviour
         //managing fuel
         fuelSlider.value = MainManager.Instance.timeTaken;
 
+        //flag and faction stuff
+        pheninFactionValue = MainManager.Instance.pheninRlshpScore;
+        xeronFactionValue = MainManager.Instance.xeronRlshpScore;
+        pheninSlider.value = pheninFactionValue;
+        xenonSlider.value = xeronFactionValue;
+
+        currentPheninScore.text = pheninSlider.value + "";
+        currentXeronScore.text = xenonSlider.value + "";
+        pheninMaxScore.text = MainManager.Instance.pheninRlshpMaxScore + "";
+        xeronMaxScore.text = MainManager.Instance.xeronRlshpMaxScore + "";
+
         isPheninFlagOn = MainManager.Instance.hasturnedonPheninColors;
         isXeronFlagOn = MainManager.Instance.hasturnedonXeronColors;
 
@@ -357,15 +380,6 @@ public class GameController : MonoBehaviour
             MainManager.Instance.SaveInfo();
 
             GameOverScreen();
-        }
-
-        if(pheninFactionValue >= pheninMaxValue)
-        {
-            pheninSecretsOwned += 1;
-        }
-        if(xeronFactionValue >= xeronMaxValue)
-        {
-            xeronSecretsOwned += 1;
         }
 
         //managing alien relationships
@@ -569,6 +583,19 @@ public class GameController : MonoBehaviour
     {
         isLevelEnded = true;
         MainManager.Instance.isLevelEnded = true;
+
+        MainManager.Instance.pheninRlshpScore = pheninFactionValue;
+        MainManager.Instance.xeronRlshpScore = xeronFactionValue;
+
+        if (pheninFactionValue >= pheninMaxValue)
+        {
+            MainManager.Instance.pheninRlshpScore = pheninMaxValue;
+        }
+        if (xeronFactionValue >= xeronMaxValue)
+        {
+            MainManager.Instance.xeronRlshpScore = xeronMaxValue;
+        }
+
         MainManager.Instance.SaveInfo();
 
         //enter citadel

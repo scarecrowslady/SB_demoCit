@@ -48,9 +48,9 @@ public class HighscoreUI : MonoBehaviour
                     // instantiate new entry
                     var inst = Instantiate(highscoreUIElementPrefab, Vector3.zero, Quaternion.identity);
                     inst.transform.SetParent(elementWrapper, false);
+                    //highscoreUIElementPrefab.SetActive(true);
 
                     uiElements.Add(inst);
-                    highscoreUIElementPrefab.SetActive(true);
                 }
 
                 // write or overwrite name & points
@@ -61,8 +61,8 @@ public class HighscoreUI : MonoBehaviour
         }
     }
 
-    public void ReturnToMenu()
-    {
-        SceneManager.LoadScene("Menu");
-    }
+    //public void ReturnToMenu()
+    //{
+    //    SceneManager.LoadScene("Menu");
+    //}
 }
